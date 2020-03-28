@@ -1,0 +1,53 @@
+<template>
+  <div class="navbar">
+    <!-- NavMenu 导航菜单 -->
+    <!-- default-active默认选中item -->
+    <!-- :router 开启路由功能,则 index指定路由地址 -->
+    <el-menu
+      :router="true"
+      :default-active="activeIndex"
+      class="el-menu-vertical-demo"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+    >
+      <el-menu-item index="/home">
+        <i class="el-icon-s-home"></i>
+        <span slot="title">首页</span>
+      </el-menu-item>
+      <el-menu-item index="/member/">
+        <i class="el-icon-user-solid"></i>
+        <span slot="title">会员管理</span>
+      </el-menu-item>
+      <el-menu-item index="/supplier/">
+        <i class="el-icon-s-cooperation"></i>
+        <span slot="title">供应商管理</span>
+      </el-menu-item>
+      <el-menu-item index="/goods/">
+        <i class="el-icon-s-goods"></i>
+        <span slot="title">商品管理</span>
+      </el-menu-item>
+      <el-menu-item index="/staff/">
+        <i class="el-icon-user"></i>
+        <span slot="title">员工管理</span>
+      </el-menu-item>
+    </el-menu>
+  </div>
+</template>
+
+<script>
+export default {
+  //处理element框架导航菜单在页面刷新时会回到默认项
+  data() {
+    return {
+      activeIndex: this.$route.name
+    };
+  }
+};
+</script>
+
+<style scoped>
+.el-menu {
+  border-right: none;
+}
+</style>
